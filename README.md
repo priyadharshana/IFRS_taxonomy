@@ -74,25 +74,31 @@ IFRS_taxonomy/
 
 ## 🚀 Getting Started
 
-1. Clone this repository:
+1. This project is developed and tested with Python 3.14.0.
+2. Clone this repository:
    ```bash
    git clone https://github.com/your-username/IFRS_taxonomy.git
    cd IFRS_taxonomy
    ```
-
-2. Install dependencies:
+3. Install Python. This project is developed and tested with Python 3.14.0.
+4. Create and activate a virtual environment using `venv`
+5. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Download the official IFRS Accounting Taxonomy Excel file from [ifrs.org](https://www.ifrs.org/issued-standards/ifrs-taxonomy/ifrs-accounting-taxonomy-2025/).
+6. Download the official IFRS Accounting Taxonomy Excel file from [ifrs.org](https://www.ifrs.org/issued-standards/ifrs-taxonomy/ifrs-accounting-taxonomy-2025/).
 
-4. Run the ETL process:
+7. Run the ETL process as a script from the project root:
    ```bash
-   python etl/ifrs_taxonomy_etl.py /path/to/IFRS_Taxonomy_2025.xlsx
+   python src/etl/ifrs_taxonomy_etl.py
+   ```
+8. Or, run the ETL process as a module (recommended) from the project root:
+   ```bash
+   python -m src.etl.ifrs_taxonomy_etl 
    ```
 
-5. Outputs will be generated in the `data/` folder.
+9. Outputs will be generated in the `data/` folder.
 
 ---
 

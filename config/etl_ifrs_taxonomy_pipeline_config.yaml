@@ -1,0 +1,57 @@
+# Configuration for the IFRS Taxonomy ETL pipeline.
+
+# --- General Settings ---
+etl_version: "1.0.0"
+operator: "Automated ETL Pipeline"
+
+
+
+# --- Filesystem Paths ---
+# All paths are relative to the project root directory.
+paths:
+  input_dir: "data/input"
+  output_dir: "data/output"
+  logs_dir: "logs"
+
+# --- Source File Configuration ---
+source_file:
+  filename: "excel-taxonomy-iti-ifrs18-2025-by-fs.xlsx"
+  sheet_name: "Taxonomy ITI"
+
+# --- Metadata ---
+optional_cols:
+  - "Standard label"
+  - "Documentation label"
+  - "Guidance label"
+  - "References"
+  - "Reference Links"
+
+df_hierarchy_cols_order:
+  -  "Concept name"
+  -  "Preferred label"
+  -  "Standard label"
+  -  "Documentation label"
+  -  "Guidance label"
+  -  "Type"
+  -  "References"
+  -  "Reference Links"
+  -  "indent"
+  -  "group_code"
+  -  "group_name"
+  -  "label_clean"
+  -  "parent_concept"
+  -  "excel_row"
+
+# --- Parameters ---
+max_hierarchy_levels: 5
+
+# --- Business Rules ---
+# Define any business rules for data transformation here
+
+# --- Governance ---
+# Define critical checks that must pass for fail-fast mode
+critical_checks:
+  - "all_have_group_info"
+  - "indent_matches_int"
+  - "no_empty_labels_unless_abstract"
+  - "unique_full_path"
