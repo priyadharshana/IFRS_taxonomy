@@ -1,5 +1,5 @@
 # 📊 IFRS Taxonomy ETL
-Please note: This is still in development and not yet production-ready.
+
 
 **IFRS Taxonomy ETL** is an open-source Python project that provides an Extract–Transform–Load (ETL) process for converting the **IFRS Accounting Taxonomy 2025 Excel file** into structured, machine-readable formats.  
 The goal is to make the taxonomy easier to use in analytics tools, databases, and hierarchical models — while respecting IFRS Foundation intellectual property.
